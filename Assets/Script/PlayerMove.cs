@@ -52,7 +52,7 @@ public class PlayerMove : MonoBehaviour
         rigid.velocity = movement;
 
         //마법 사용
-        if (Input.GetButtonDown("Jump") && coolTime == false && playerDamage == false) {
+        if (Input.GetButtonDown("Jump") && !coolTime && !playerDamage) {
             anim.SetBool("isMagic", true);
             magic.Magical();
             Invoke("OffMagic", 1);
